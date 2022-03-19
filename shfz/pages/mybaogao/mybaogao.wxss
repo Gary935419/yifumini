@@ -1,0 +1,4 @@
+/* pages/mybaogao/mybaogao.wxss */
+page {
+  background: #ffffff;
+}

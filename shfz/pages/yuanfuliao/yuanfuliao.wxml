@@ -1,0 +1,50 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="banner">
+    <view class="z_cc">
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="inner" style="position: absolute;z-index: auto;">
+    <view class="news_list">
+      <view class="news_item" style="margin-bottom: 1px;">
+          <view class="news_area">
+            <view class="news_title">按合同检索:</view>
+			<input class="input_seach" bindinput="bindhetongText" type="text" value="{{hetonghao}}"/>
+			<button class="button_go" bindtap='getseache'>搜索</button>
+          </view>
+      </view>
+	  
+	  <view class="table">
+		   <view class="tr bg-w">
+		   <view class="th">合同名</view>
+		   <view class="th">签订时间</view>
+		   <view class="th">查看</view>
+		   </view>
+		   <block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+			   <view class="tr">
+				   <view class="td">{{item.bianhao}}</view>
+				   <view class="td">{{item.qianding}}</view>
+				   
+				       <view class="td" style="font-weight: bold;color: #182864;">
+						   <navigator url="../yuanfuliao2/yuanfuliao2?id={{item.id}}&bianhao={{item.bianhao}}" hover-class="none">
+							   点击查看 > 
+						   </navigator>
+					   </view>
+				   
+			   </view>
+		   </block>
+	   </view>
+	
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+/* pages/my/my.wxss */
+/* pages/my/my.wxss */
+
+.my_top_kuai {
+    background: #182864;
+    height: 150rpx;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}

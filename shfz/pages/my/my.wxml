@@ -1,0 +1,68 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+  <view class="my_top">
+    <view class="my_top_kuai"></view>
+    <view class="my_top_block">
+		<block wx:if="{{isGrant}}">
+		  <image src='{{userinfo.avater}}' mode="widthFix" class="my_header" />
+		  <view class="my_top_name">{{userinfo.nickname}}</view>
+		  <view class="mt_top_tel">授权账号：{{userinfo.truename}}</view>
+	    </block>
+		<block wx:else>
+			<button class='bottom' type='primary' style="color: #fff;background-color: #182864;width: 50%;" bindtap='go_Serve'>
+			  授权登录
+			</button>
+		</block>
+    </view>
+  </view>
+
+  <view class="inner">
+    <view class="my_list">
+      <!-- <view class="my_item">
+        <navigator class="my_link" bindtap="go_check" hover-class="none">
+          <view class="my_info">
+            <image src='../../images/my3.png' mode="widthFix" />
+            <view>vip房产报告</view>
+          </view>
+          <image src='../../images/jian4.png' mode="widthFix" />
+        </navigator>
+      </view>
+      <view class="my_item">
+        <navigator class="my_link" url="../mykefu/mykefu" hover-class="none">
+          <view class="my_info">
+            <image src='../../images/my4.png' mode="widthFix" />
+            <view>我的专享客服</view>
+          </view>
+          <image src='../../images/jian4.png' mode="widthFix" />
+        </navigator>
+      </view> -->
+      <!-- <view class="my_item">
+        <navigator class="my_link" url="../personal/personal" hover-class="none">
+          <view class="my_info">
+            <image src='../../images/my5.png' mode="widthFix" />
+            <view>我的个人信息</view>
+          </view>
+          <image src='../../images/jian4.png' mode="widthFix" />
+        </navigator>
+      </view> -->
+      <!-- <view class="my_item">
+        <navigator class="my_link" url="../question/question" hover-class="none">
+          <view class="my_info">
+            <image src='../../images/my6.png' mode="widthFix" />
+            <view>我的提问</view>
+          </view>
+          <image src='../../images/jian4.png' mode="widthFix" />
+        </navigator>
+      </view>
+      <view class="my_item">
+        <navigator class="my_link" url="../meorder/meorder" hover-class="none">
+          <view class="my_info">
+            <image src='../../images/my7.png' mode="widthFix" />
+            <view>我的购买报告</view>
+          </view>
+          <image src='../../images/jian4.png' mode="widthFix" />
+        </navigator>
+      </view> -->
+    </view>
+  </view>
+</view>

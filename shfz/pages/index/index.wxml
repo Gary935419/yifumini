@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<view class="index">
+  <view class="banner">
+    <view class="z_cc">
+      <!--第一个是视频-->
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  
+  <view class="index_news">
+      <view class="inner">
+        <view class="index_news_section">
+          <view class="index_news_top">
+            <view class="index_news_title">最新资讯</view>
+            <navigator class="index_news_more" url="../news/news" hover-class="none" open-type='switchTab'>
+              <view>更多</view>
+              <image src='../../images/jian1.png' mode="widthFix" />
+            </navigator>
+          </view>
+          <view class="index_news_banner">
+            <swiper vertical="true" display-multiple-items="3" circular="true" autoplay="true" interval="3000" duration="500" class='swiper1'>
+  			  <block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+  				  <swiper-item>
+  					<navigator class='index_gong_text' style="font-size: 35rpx;" url="../news_ex/news_ex?id={{item.gid}}" hover-class="none">{{item.gname}}</navigator>
+  				  </swiper-item>
+                </block>
+          </swiper>
+          </view>
+        </view>
+      </view>
+    </view><!--index_news-->
+	
+  <view class="index_list">
+    <view class="inner">
+      <navigator class="index_list_item" url="../yuanfuliao/yuanfuliao" hover-class="none">
+        <!-- <navigator class="index_list_link" url="../none/none" hover-class="none"> -->
+          <view class="index_list_box">
+            <view class="index_list_title"><view class="index_list_title_icon"></view>原辅料表查看</view>
+          </view>
+		  <view class="index_list_text">按合同查看</view>
+		  <view class="index_list_text1"></view>
+		  <view class="index_list_text1"></view>
+		  <image class="index_news_img" src='../../images/type1.png' mode="widthFix" />
+        <!-- </navigator> -->
+      </navigator>
+      <navigator class="index_list_item" url="../baojiadanc/baojiadanc" hover-class="none">
+        <!-- <navigator class="index_list_link" url="../none/none" hover-class="none"> -->
+          <view class="index_list_box">
+            <view class="index_list_title"><view class="index_list_title_icon_r"></view>裁断报告书查看</view>
+            <view class="index_list_text">指示数量表</view>
+			<view class="index_list_text1">裁定数量表</view>
+			<view class="index_list_text1">装箱报表</view>
+          </view>
+      	  <image class="index_news_img" style="margin-top: -10%;" src='../../images/type3.png' mode="widthFix" />
+        <!-- </navigator> -->
+      </navigator>
+      <navigator class="index_list_item" url="../baojiadan/baojiadan" hover-class="none">
+        <!-- <navigator class="index_list_link" url="../none/none" hover-class="none"> -->
+          <view class="index_list_box">
+            <view class="index_list_title"><view class="index_list_title_icon"></view>报价单查看</view>
+            <view class="index_list_text">预算报价表</view>
+			<view class="index_list_text1">决算报价表</view>
+			<view class="index_list_text1"></view>
+          </view>
+      	  <image class="index_news_img" style="margin-top: -5%;" src='../../images/type4.png' mode="widthFix" />
+        <!-- </navigator> -->
+      </navigator>
+      <navigator class="index_list_item" url="../shengchanjihuazu/shengchanjihuazu" hover-class="none">
+        <!-- <navigator class="index_list_link" url="../none/none" hover-class="none"> -->
+          <view class="index_list_box">
+            <view class="index_list_title"><view class="index_list_title_icon_r"></view>生产计划查看</view>
+            <view class="index_list_text">按月查看</view>
+			<view class="index_list_text1"></view>
+			<view class="index_list_text1"></view>
+          </view>
+      	  <image class="index_news_img" style="margin-top: -5%;" src='../../images/type5.png' mode="widthFix" />
+        <!-- </navigator> -->
+      </navigator>
+	  <navigator class="index_list_item" url="../yangpinzhizuogongsi/yangpinzhizuogongsi" hover-class="none">
+	    <!-- <navigator class="index_list_link" url="../none/none" hover-class="none"> -->
+	      <view class="index_list_box">
+	        <view class="index_list_title"><view class="index_list_title_icon"></view>样品制作查看</view>
+	        <view class="index_list_text"></view>
+			<view class="index_list_text1"></view>
+			<view class="index_list_text1"></view>
+	      </view>
+	  	  <image class="index_news_img_r" src='../../images/type6.png' mode="widthFix" />
+	    <!-- </navigator> -->
+	  </navigator>
+    </view>
+  </view>
+</view>

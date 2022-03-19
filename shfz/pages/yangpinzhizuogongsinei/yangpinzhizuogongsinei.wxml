@@ -1,0 +1,40 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="banner">
+    <view class="z_cc">
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="inner" style="position: absolute;z-index: auto;">
+    <view class="news_list">
+      <view class="news_item" style="margin-bottom: 1px;">
+          <view class="news_area">
+            <view class="news_title" style="width: 50%;">
+				<navigator url="../yangpinzhizuogongsi/yangpinzhizuogongsi" hover-class="none">
+						く 返回
+				</navigator>
+			</view>
+          </view>
+      </view>
+	  
+	  <block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+		   <view class="table">
+			   <view class="index_list_title_icon"></view>
+			   <view class="select_number"> 子公司:  {{lname}} </view>
+			   <view class="select_seach2" bindtap='previewFile' data-url='{{item.yangpinurl}}'>
+				<view style="display:inline-block;">点击在线查看 </view>
+			   </view>
+		   </view>
+	  </block>
+    </view>
+  </view>
+</view>

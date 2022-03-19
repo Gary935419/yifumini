@@ -1,0 +1,49 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="banner">
+    <view class="z_cc">
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="inner" style="position: absolute;z-index: auto;">
+    <view class="news_list">
+      <view class="news_item" style="margin-bottom: 1px;">
+          <view class="news_area">
+            <view class="news_title">
+				<navigator url="../baojiadanc/baojiadanc" hover-class="none">
+						く 返回
+				</navigator>
+			</view>
+			 <view class="select_text" bindtap="select">
+			     <view style="display:inline-block;">合同编号: {{bianhao}}</view>
+			 </view>
+          </view>
+      </view>
+	  
+	  <block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+		   <view class="table">
+			   <view class="index_list_title_icon"></view>
+			   <view class="select_number"> 款号: {{item.kuanhao}} </view>
+			   <view class="select_seach" bindtap='previewFile' data-url='{{item.zhuangxiangurl}}'>
+				<view style="display:inline-block;">装箱报表</view>
+			   </view>
+			   <view class="select_seach1" bindtap='previewFile' data-url='{{item.caidingurl}}'>
+				<view style="display:inline-block;">裁定数量表</view>
+			   </view>
+			   <view class="select_seach2" bindtap='previewFile' data-url='{{item.zhishiurl}}'>
+				<view style="display:inline-block;">指示数量表 </view>
+			   </view>
+		   </view>
+	  </block>
+    </view>
+  </view>
+</view>

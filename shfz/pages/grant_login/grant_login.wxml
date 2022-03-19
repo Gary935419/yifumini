@@ -1,0 +1,20 @@
+<view>
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+           <image src='../../images/banner1.png'></image>
+        </view>
+        <view class='content'>
+            <view class="personal_info">
+              <view>账号:</view>
+              <input bindinput="bindaccountText" type="text" value="{{account}}" placeholder='请输入账号' />
+            </view>
+            <view class="personal_info">
+              <view>密码:</view>
+              <input bindinput="bindpasswordText" type="password" value="{{password}}" placeholder='请输入密码' />
+            </view>
+        </view>
+        <button class='bottom' type='primary' style="background-color: #182864;width: 60%;" lang="zh_CN" bindtap='getUserProfile'>
+            确认登录
+        </button>
+    </view>
+</view>

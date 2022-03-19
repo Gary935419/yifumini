@@ -1,0 +1,11 @@
+<!--pages/mybaogao/mybaogao.wxml-->
+<view class="mybaogao">
+  <view class="inner" wx:if="{{pdfinfo != ''}}">
+    <view class="box" style="margin-top: 50px;">
+      <button class="home_btu" catchtap='downLoadPdf' data-url="{{pdfinfo}}">下载vip房产报告</button>
+    </view>
+  </view>
+  <view class="inner" wx:else>
+  	  <view class="none_text" style="text-align: center;">暂 无 查 询 信 息 !</view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="banner">
+    <view class="z_cc">
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="inner" style="position: absolute;z-index: auto;">
+    <view class="news_list" style="padding: 20px;">
+		<block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+				<view class="table" style="margin-top: 15%;">
+					   <view class="select_number">
+						   <navigator url="../yangpinzhizuogongsinei/yangpinzhizuogongsinei?id={{item.id}}&lname={{item.lname}}" hover-class="none">
+							 {{item.lname}}
+						   </navigator>
+					   </view>	
+				</view>
+		</block>
+    </view>
+  </view>
+</view>

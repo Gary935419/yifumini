@@ -1,0 +1,30 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="banner">
+    <view class="z_cc">
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="inner" style="position: absolute;z-index: auto;">
+    <view class="news_list">
+	   <view class="table" style="margin-top: 12%;">
+		   <block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+				<view class="select_number" style="float: left;"> 
+					<navigator url="../shengchanjihuayue/shengchanjihuayue?id={{item.id}}&lname={{item.lname}}" hover-class="none">
+						 {{item.lname}}
+					</navigator>
+				</view>	
+		   </block>
+	   </view>
+    </view>
+  </view>
+</view>

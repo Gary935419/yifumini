@@ -1,0 +1,35 @@
+<!--pages/news/news.wxml-->
+<view class="news">
+  <view class="banner">
+    <view class="z_cc">
+      <!--第一个是视频-->
+      <swiper class="swipers" autoplay="true" interval="5000" previous-margin="0" next-margin="0" circular="true"
+        current="{{currentSwiper}}" bindchange="yearSwiperChange" style='height:{{height1}}px'>
+        <block wx:for="{{cclist}}" wx:index="{{index}}" wx:key=''>
+          <swiper-item>
+            <view class="li {{swiperCurrent == index ? 'active' : ''}}">
+              <image mode='widthFix' src="{{item.url}}" mode="widthFix" style='width:100%;' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+  <view class="inner">
+    <view class="news_list">
+		<block wx:for="{{newlist}}" wx:index="{{index}}" wx:key='key'>
+		  <view class="news_item">
+			<navigator class="news_link" url="../news_ex/news_ex?id={{item.gid}}" hover-class="none">
+			  <view class="news_area">
+				<view class="news_title">{{item.gname}}</view>
+				<view class="news_time">{{item.gtitle}}</view>
+			  </view>
+			  <image src='{{item.gimg}}' mode="widthFix" />
+			</navigator>
+		  </view>
+		</block>
+    </view>
+  </view>
+</view>
+
